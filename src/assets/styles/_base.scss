@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 10px;
+  background: #26136e;
+}
+
+html,
+body,
+#root,
+#scene {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.stars {
+  fill: #fff;
+}
+
+.shadows {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.moon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 500px;
+  height: 500px;
+}
+
+.stars {
+  width: 100%;
+  position: relative;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.planet {
+  position: absolute;
+  z-index: 3;
+  // transition: transform 1s ease-in-out;
+  cursor: pointer;
+  // opacity: 0;
+}
+
+// .planet:hover {
+//   transform: scale(1.3);
+// }
+
+
+
+.blue-planet {
+  top: 54vh;
+  left: 13vw;
+}
+
+.red-planet {
+  top: 31vh;
+  left: 30vw;
+}
+
+.green-planet {
+  top: 27vh;
+  right: 30vw;
+}
+
+.orange-planet {
+  top: 57vh;
+  right: 20vw;
+}
+
+.side-planet {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  z-index: 300;
+}
+
+.bottom-planet {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
