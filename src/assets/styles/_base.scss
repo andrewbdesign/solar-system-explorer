@@ -96,3 +96,19 @@ body,
   bottom: 0;
   right: 0;
 }
+
+.title {
+  font-size: 30px;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-align: center;
+  position: relative;
+  top: 10vh;
+  z-index: 500;
+
+  span {
+    font-weight: 400;
+  }
+}

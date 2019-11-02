@@ -12,6 +12,7 @@ import GreenPlanet from './GreenPlanet';
 import OrangePlanet from './OrangePlanet';
 import BottomPlanet from './BottomPlanet';
 import Shadows from './Shadows';
+import Title from './Title';
 
 const Index = () => {
   useEffect(() => {
@@ -31,6 +32,7 @@ const Index = () => {
 
   return (
     <div id="scene">
+      <Title />
       <Stars />
       <Moon />
       <SidePlanet />
