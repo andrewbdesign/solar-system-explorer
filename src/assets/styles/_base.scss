@@ -108,7 +108,15 @@ body,
   top: 10vh;
   z-index: 500;
 
-  span {
+  span,
+  p {
     font-weight: 400;
+  }
+
+  p {
+    font-size: 2rem;
+    position: relative;
+    top: 3rem;
+    letter-spacing: 0.4px;
   }
 }

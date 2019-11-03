@@ -11,12 +11,16 @@ const Stars = () => {
       {
         autoAlpha: 0,
         ease: Power1.easeInOut,
-        delay: 2,
-        yoyo: true,
-        repeat: -1,
       },
       0.06,
       '0',
+    );
+    tl.staggerTo(
+      stars,
+      2,
+      { autoAlpha: 0.4, yoyo: true, repeat: -1 },
+      0.6,
+      '+=0',
     );
   };
 

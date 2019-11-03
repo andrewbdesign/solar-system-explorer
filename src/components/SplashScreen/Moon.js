@@ -1,6 +1,12 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
+import { TimelineMax, Power1 } from 'gsap';
 
 const Moon = () => {
+  useEffect(() => {
+    const tl = new TimelineMax();
+    tl.from('.moon', 1, { scale: 0, ease: Power1.easeInOut }, '0');
+  }, []);
+
   return (
     <Fragment>
       <svg
