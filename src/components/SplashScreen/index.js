@@ -42,6 +42,7 @@ const Index = () => {
       <OrangePlanet />
       <BottomPlanet />
       <Shadows />
+      <div className="scene-overlay"></div>
     </div>
   );
 };

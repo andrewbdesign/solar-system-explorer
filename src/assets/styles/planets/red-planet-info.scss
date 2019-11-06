@@ -1,0 +1,266 @@
+.red-planet-info {
+  // background: #000;
+  // background: linear-gradient(to bottom, rgba(18, 0, 39, 1) 0%, rgba(0, 0, 0, 1) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 1) 100%);
+  color: #fff;
+  // height: 600px;
+  z-index: 400;
+  position: relative;
+  // top: -15px;
+  text-align: center;
+  padding: 8rem 0;
+}
+
+.title-info {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  top: -100px;
+  opacity: 0;
+}
+
+.button-primary {
+  background: #ed7a33;
+  text-decoration: none;
+  color: #fff;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 5px;
+}
+
+.size__container {
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.size-planet-title {
+  margin-top: 3rem;
+}
+
+$earth: linear-gradient(to right, #00c9ff, #92fe9d);
+$mars: linear-gradient(to right, #fe8c00, #f83600);
+$moon: linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea);
+$size: 300;
+
+h3 {
+  font-size: 5rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+h3+p {
+  font-size: 1.6rem;
+}
+
+.planet-size {
+  span {
+    display: inline-block;
+    width: 100%;
+    height: 2px;
+    background: inherit;
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 2px;
+      height: 20px;
+      background: inherit;
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      top: -10px;
+    }
+
+    &::after {
+      content: '';
+      width: 2px;
+      height: 20px;
+      background: inherit;
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: -10px;
+    }
+  }
+
+  p {
+    font-size: 1.4rem;
+  }
+}
+
+.planet-size.planet-size-earth span {
+  background: $earth;
+}
+
+.planet-size.planet-size-mars span {
+  background: $mars;
+}
+
+.planet-size.planet-size-moon span {
+  background: $moon;
+}
+
+.earth-size,
+.mars-size,
+.moon-size {
+  position: relative;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  // color: #dadada;
+  color: #222;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 30;
+    font-size: 2rem;
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.earth-size {
+  width: $size + px;
+  height: $size + px;
+  background: $earth;
+}
+
+.mars-size {
+  width: ($size / 2)+ px;
+  height: ($size / 2)+ px;
+  background: $mars;
+}
+
+.moon-size {
+  width: ($size / 4)+ px;
+  height: ($size / 4)+ px;
+  background: $moon;
+}
+
+.miles {
+  margin-top: 1rem;
+}
+
+.miles,
+.kms {
+  font-size: 1rem !important;
+  color: #dadada;
+}
+
+// Year container
+.year {
+  padding: 18rem 0;
+  background: linear-gradient(to bottom, #04011c 0%, #0a0d2d 100%);
+}
+
+.year__container {
+  display: flex;
+  justify-content: space-between;
+
+  div {
+    width: 100%;
+  }
+
+  .days-container {
+    width: 300px;
+    margin: 50px auto;
+    text-align: left;
+
+    span {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin: 2px;
+      border-radius: 50%;
+    }
+
+  }
+
+  .days-container.earth-days span {
+    // background: #44e3e5;
+    background: $earth;
+  }
+
+  .days-container.mars-days span {
+    // background: #d63b56;
+    background: $mars;
+  }
+}
+
+// Distance
+.distance {
+  // padding: 14rem 0;
+  background: linear-gradient(to bottom, #0a0d2d 0%, #000000 100%);
+}
+
+.distance__container {
+  padding: 8rem 0;
+}
+
+.mars-distance-container {
+  width: 600px;
+  height: 600px;
+  margin: auto;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  position: relative;
+
+  img.mars-distance-planet {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: -15px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+  }
+}
+
+.earth-distance-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 80%;
+  height: 80%;
+  border: 3px solid #fff;
+  border-radius: 50%;
+
+  img.earth-distance-planet {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: -30px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+  }
+}
+
+img.sun-distance-planet {
+  width: 230px;
+  height: 230px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
