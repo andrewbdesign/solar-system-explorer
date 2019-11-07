@@ -2,6 +2,8 @@ import React, { Fragment } from 'react';
 import Size from './Size';
 import Year from './Year';
 import Distance from './Distance';
+import Speed from './Speed';
+import Gravity from './Gravity';
 
 const Index = () => {
   return (
@@ -13,6 +15,8 @@ const Index = () => {
         <Size />
         <Year />
         <Distance />
+        <Speed />
+        <Gravity />
       </section>
     </Fragment>
   );

@@ -8,7 +8,7 @@
   position: relative;
   // top: -15px;
   text-align: center;
-  padding: 8rem 0;
+  padding: 8rem 0 0;
 }
 
 .title-info {
@@ -216,7 +216,7 @@ h3+p {
   width: 600px;
   height: 600px;
   margin: auto;
-  border: 3px solid #fff;
+  border: 3px solid #666;
   border-radius: 50%;
   position: relative;
 
@@ -240,7 +240,7 @@ h3+p {
   margin: auto;
   width: 80%;
   height: 80%;
-  border: 3px solid #fff;
+  border: 3px solid #666;
   border-radius: 50%;
 
   img.earth-distance-planet {
@@ -263,4 +263,118 @@ img.sun-distance-planet {
   right: 0;
   bottom: 0;
   margin: auto;
+}
+
+.speed {
+  padding: 8rem 0;
+  background: linear-gradient(to bottom, #000000 0%, #272769 100%);
+}
+
+.earth-speed {
+  height: 200px;
+  border-top: 1px solid #dcdcdc;
+  position: relative;
+  margin-top: 14rem;
+}
+
+.earth-speed-img {
+  position: absolute;
+  left: -200px;
+  top: -100px;
+  width: 200px;
+  height: 200px;
+}
+
+.mars-speed {
+  height: 200px;
+  border-top: 1px solid #dcdcdc;
+  position: relative;
+  margin-top: 8rem;
+}
+
+.mars-speed-img {
+  position: absolute;
+  left: -100px;
+  width: 100px;
+  height: 100px;
+  top: -50px;
+}
+
+.earth-speed-title,
+.mars-speed-title {
+  font-size: 1.6rem;
+  margin-top: 1.3rem;
+  position: relative;
+  z-index: 300;
+}
+
+.earth-speed-title {
+  top: 100px;
+  background: $earth;
+  color: #000;
+  display: inline-block;
+  padding: 1rem 3rem;
+  border-radius: 5px;
+}
+
+.mars-speed-title {
+  // margin-top: 3rem;
+  top: -120px;
+  background: $mars;
+  color: #000;
+  display: inline-block;
+  padding: 1rem 3rem;
+  border-radius: 5px;
+}
+
+.gravity {
+  background: linear-gradient(to bottom, #272769 0%, #095569 100%);
+  padding: 5rem 0 0;
+}
+
+.gravity-group {
+  display: flex;
+}
+
+.earth-gravity {
+  width: 50%;
+  height: 200px;
+  // background: $earth;
+  margin-top: 23rem;
+  border-radius: 100% 0px 0px 0px;
+  background-image: url('../../../assets/images/earth.svg');
+  background-size: 200%;
+  background-position: center;
+  position: relative;
+
+  .ball {
+    right: 40px;
+    top: -40px;
+    background: $earth;
+  }
+}
+
+.mars-gravity {
+  width: 50%;
+  height: 200px;
+  // background: $mars;
+  margin-top: 23rem;
+  border-radius: 0px 100% 0px 0px;
+  background-image: url('../../../assets/images/mars.svg');
+  background-size: 200%;
+  background-position: center;
+  position: relative;
+
+  .ball {
+    left: 40px;
+    top: -40px;
+    background: $mars;
+  }
+}
+
+.ball {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  border-radius: 50%;
 }
