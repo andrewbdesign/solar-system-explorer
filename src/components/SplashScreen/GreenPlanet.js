@@ -1,7 +1,11 @@
-import React, { Fragment, useEffect } from 'react';
-import { TimelineMax, Back, Power1 } from 'gsap';
+import React, { Fragment, useEffect, useState } from 'react';
+import { TimelineMax, Back, Power1, TweenLite } from 'gsap';
+import ScrollToPlugin from 'gsap/ScrollToPlugin';
 
 const GreenPlanet = () => {
+  // eslint-disable-next-line
+  const plugin = [ScrollToPlugin];
+  const [active, setActive] = useState(false);
   useEffect(() => {
     const tl = new TimelineMax();
     tl.from(
@@ -13,20 +17,111 @@ const GreenPlanet = () => {
   }, []);
 
   const onHandleMouseOver = () => {
-    const tl = new TimelineMax();
-    tl.to('.green-planet', 0.3, { scale: 1.3, ease: Power1.easeOut }, '0');
+    if (!active) {
+      const tl = new TimelineMax();
+      tl.to(
+        '.green-planet',
+        0.3,
+        { scale: 1.3, x: 0, y: 0, ease: Power1.easeOut },
+        '0',
+      );
+    }
   };
 
   const onHandleMouseOut = () => {
-    const tl = new TimelineMax();
-    tl.to('.green-planet', 0.3, { scale: 1, ease: Power1.easeOut }, '0');
+    if (!active) {
+      const tl = new TimelineMax();
+      tl.to(
+        '.green-planet',
+        0.3,
+        { scale: 1, x: 0, y: 0, ease: Power1.easeOut },
+        '0',
+      );
+    }
   };
+
+  const onClick = () => {
+    if (active) {
+      const tl = new TimelineMax();
+      showPlanets();
+      tl.to(
+        '.moon',
+        0.6,
+        { x: 0, scale: 1, y: 0, ease: Power1.easeInOut },
+        '0',
+      );
+      tl.to(
+        '.scene-overlay, .title-info',
+        0.6,
+        { opacity: 0, ease: Power1.easeInOut },
+        '0',
+      );
+      tl.to('.title', 1, { autoAlpha: 1, ease: Power1.easeInOut }, '0');
+    } else {
+      const tl = new TimelineMax({ delay: 0.6 });
+      hidePlanets();
+      TweenLite.to(window, 2, {
+        scrollTo: { y: '.title-info' },
+        ease: Power1.easeInOut,
+        delay: 0.6,
+        force3D: true,
+      });
+      tl.to(
+        '.green-planet',
+        1,
+        { scale: 7, x: 180, y: 120, zIndex: 1350, ease: Power1.easeInOut },
+        '0',
+      );
+      tl.to(
+        '.moon',
+        1,
+        { x: -100, scale: 0.7, y: -100, ease: Power1.easeInOut },
+        '0',
+      );
+      tl.to(
+        '.scene-overlay, .title-info',
+        1,
+        { opacity: 1, ease: Power1.easeInOut },
+        '0',
+      );
+      tl.to('.title', 1, { autoAlpha: 0, ease: Power1.easeInOut }, '0');
+    }
+    setActive(!active);
+  };
+
+  const hidePlanets = () => {
+    const planets = [
+      '.red-planet',
+      '.blue-planet',
+      // '.green-planet',
+      '.orange-planet',
+      '.side-planet',
+      '.bottom-planet',
+    ];
+    const tl = new TimelineMax();
+    tl.to(planets, 1, { autoAlpha: 0, ease: Power1.easeInOut }, '0');
+  };
+
+  const showPlanets = () => {
+    const planets = [
+      '.red-planet',
+      '.blue-planet',
+      // '.green-planet',
+      '.orange-planet',
+      '.side-planet',
+      '.bottom-planet',
+    ];
+    const tl = new TimelineMax();
+    tl.to(planets, 0.6, { autoAlpha: 1, ease: Power1.easeInOut }, '0');
+  };
+
   return (
     <Fragment>
       <svg
         className="green-planet planet"
         onMouseOver={onHandleMouseOver}
         onMouseOut={onHandleMouseOut}
+        onClick={onClick}
         version="1.1"
         x="0px"
         y="0px"

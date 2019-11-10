@@ -99,11 +99,13 @@ h3+p {
   background: $mars;
 }
 
+.planet-size.planet-size-mercury span,
 .planet-size.planet-size-moon span {
   background: $moon;
 }
 
 .earth-size,
+.mercury-size,
 .mars-size,
 .moon-size {
   position: relative;
@@ -129,8 +131,9 @@ h3+p {
     margin: auto;
     z-index: 30;
     font-size: 2rem;
-    width: 10px;
-    height: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -143,6 +146,12 @@ h3+p {
 .mars-size {
   width: ($size / 2)+ px;
   height: ($size / 2)+ px;
+  background: $mars;
+}
+
+.mercury-size {
+  width: ($size * .38)+ px;
+  height: ($size * .38)+ px;
   background: $mars;
 }
 
@@ -200,6 +209,10 @@ h3+p {
     // background: #d63b56;
     background: $mars;
   }
+
+  .days-container.mercury-days span {
+    background: $moon;
+  }
 }
 
 // Distance
@@ -212,58 +225,117 @@ h3+p {
   padding: 8rem 0;
 }
 
-.mars-distance-container {
-  width: 600px;
-  height: 600px;
-  margin: auto;
-  border: 3px solid #666;
-  border-radius: 50%;
-  position: relative;
+.distance__container.mars__distance {
+  .mars-distance-container {
+    width: 600px;
+    height: 600px;
+    margin: auto;
+    border: 3px solid #666;
+    border-radius: 50%;
+    position: relative;
 
-  img.mars-distance-planet {
+    img.mars-distance-planet {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      top: -15px;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  .earth-distance-container {
     position: absolute;
-    width: 30px;
-    height: 30px;
-    top: -15px;
-    margin: 0 auto;
+    top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
+    margin: auto;
+    width: 80%;
+    height: 80%;
+    border: 3px solid #666;
+    border-radius: 50%;
+
+    img.earth-distance-planet {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      top: -30px;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  img.sun-distance-planet {
+    width: 230px;
+    height: 230px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
   }
 }
 
-.earth-distance-container {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 80%;
-  height: 80%;
-  border: 3px solid #666;
-  border-radius: 50%;
+.distance__container.mercury__distance {
+  .earth-distance-container {
+    width: 600px;
+    height: 600px;
+    margin: auto;
+    border: 3px solid #666;
+    border-radius: 50%;
+    position: relative;
 
-  img.earth-distance-planet {
+    img.earth-distance-planet {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      top: -30px;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  .mercury-distance-container {
     position: absolute;
-    width: 60px;
-    height: 60px;
-    top: -30px;
-    margin: 0 auto;
+    top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
+    margin: auto;
+    width: 55%;
+    height: 55%;
+    border: 3px solid #666;
+    border-radius: 50%;
+
+    img.mercury-distance-planet {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      top: -15px;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  img.sun-distance-planet {
+    width: 230px;
+    height: 230px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
   }
 }
 
-img.sun-distance-planet {
-  width: 230px;
-  height: 230px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-}
+
 
 .speed {
   padding: 8rem 0;
@@ -300,8 +372,24 @@ img.sun-distance-planet {
   top: -50px;
 }
 
+.mercury-speed {
+  height: 200px;
+  border-top: 1px solid #dcdcdc;
+  position: relative;
+  margin-top: 8rem;
+}
+
+.mercury-speed-img {
+  position: absolute;
+  left: -100px;
+  width: 100px;
+  height: 100px;
+  top: -50px;
+}
+
 .earth-speed-title,
-.mars-speed-title {
+.mars-speed-title,
+.mercury-speed-title {
   font-size: 1.6rem;
   margin-top: 1.3rem;
   position: relative;
@@ -317,14 +405,18 @@ img.sun-distance-planet {
   border-radius: 5px;
 }
 
-.mars-speed-title {
-  // margin-top: 3rem;
+.mars-speed-title,
+.mercury-speed-title {
   top: -120px;
   background: $mars;
   color: #000;
   display: inline-block;
   padding: 1rem 3rem;
   border-radius: 5px;
+}
+
+.mercury-speed-title {
+  background: $moon;
 }
 
 .gravity {
@@ -369,6 +461,24 @@ img.sun-distance-planet {
     left: 40px;
     top: -40px;
     background: $mars;
+  }
+}
+
+.mercury-gravity {
+  width: 50%;
+  height: 200px;
+  // background: $mars;
+  margin-top: 23rem;
+  border-radius: 0px 100% 0px 0px;
+  background-image: url('../../../assets/images/mercury.svg');
+  background-size: 200%;
+  background-position: center;
+  position: relative;
+
+  .ball {
+    left: 40px;
+    top: -40px;
+    background: $moon;
   }
 }
 

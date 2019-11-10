@@ -100,13 +100,6 @@ const RedPlanet = () => {
     ];
     const tl = new TimelineMax();
     tl.to(planets, 1, { autoAlpha: 0, ease: Power1.easeInOut }, '0');
-    // const planets = document.querySelectorAll('.planet');
-    // console.log({ planets });
-
-    // const result = planets.filter(planet => {
-    //   planet.classList.value.includes('.red-planet');
-    // });
-    // console.log('result', result);
   };
 
   const showPlanets = () => {
