@@ -43,6 +43,7 @@
 $earth: linear-gradient(to right, #00c9ff, #92fe9d);
 $mars: linear-gradient(to right, #fe8c00, #f83600);
 $moon: linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea);
+$venus: linear-gradient(to right, #f2994a, #f2c94c);
 $size: 300;
 
 h3 {
@@ -91,12 +92,20 @@ h3+p {
   }
 }
 
+// =======
+// Size
+// =======
+
 .planet-size.planet-size-earth span {
   background: $earth;
 }
 
 .planet-size.planet-size-mars span {
   background: $mars;
+}
+
+.planet-size.planet-size-venus span {
+  background: $venus;
 }
 
 .planet-size.planet-size-mercury span,
@@ -106,6 +115,7 @@ h3+p {
 
 .earth-size,
 .mercury-size,
+.venus-size,
 .mars-size,
 .moon-size {
   position: relative;
@@ -155,6 +165,12 @@ h3+p {
   background: $mars;
 }
 
+.venus-size {
+  width: ($size * .9)+ px;
+  height: ($size * .9)+ px;
+  background: $mars;
+}
+
 .moon-size {
   width: ($size / 4)+ px;
   height: ($size / 4)+ px;
@@ -170,6 +186,10 @@ h3+p {
   font-size: 1rem !important;
   color: #dadada;
 }
+
+// =======
+// Days
+// =======
 
 // Year container
 .year {
@@ -201,13 +221,15 @@ h3+p {
   }
 
   .days-container.earth-days span {
-    // background: #44e3e5;
     background: $earth;
   }
 
   .days-container.mars-days span {
-    // background: #d63b56;
     background: $mars;
+  }
+
+  .days-container.venus-days span {
+    background: $venus;
   }
 
   .days-container.mercury-days span {
@@ -215,7 +237,9 @@ h3+p {
   }
 }
 
+// =======
 // Distance
+// =======
 .distance {
   // padding: 14rem 0;
   background: linear-gradient(to bottom, #0a0d2d 0%, #000000 100%);
@@ -335,7 +359,64 @@ h3+p {
   }
 }
 
+.distance__container.venus__distance {
+  .earth-distance-container {
+    width: 600px;
+    height: 600px;
+    margin: auto;
+    border: 3px solid #666;
+    border-radius: 50%;
+    position: relative;
 
+    img.earth-distance-planet {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      top: -30px;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  .venus-distance-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 75%;
+    height: 75%;
+    border: 3px solid #666;
+    border-radius: 50%;
+
+    img.venus-distance-planet {
+      position: absolute;
+      width: 55px;
+      height: 55px;
+      top: -27.5px;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  img.sun-distance-planet {
+    width: 230px;
+    height: 230px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}
+
+// =======
+// Speed
+// =======
 
 .speed {
   padding: 8rem 0;
@@ -387,13 +468,33 @@ h3+p {
   top: -50px;
 }
 
+.venus-speed {
+  height: 190px;
+  border-top: 1px solid #dcdcdc;
+  position: relative;
+  margin-top: 18rem;
+}
+
+.venus-speed-img {
+  position: absolute;
+  left: -190px;
+  top: -95px;
+  width: 190px;
+  height: 190px;
+}
+
 .earth-speed-title,
 .mars-speed-title,
-.mercury-speed-title {
+.mercury-speed-title,
+.venus-speed-title {
   font-size: 1.6rem;
   margin-top: 1.3rem;
   position: relative;
   z-index: 300;
+}
+
+.venus-speed-title {
+  margin-top: 0;
 }
 
 .earth-speed-title {
@@ -406,8 +507,8 @@ h3+p {
 }
 
 .mars-speed-title,
-.mercury-speed-title {
-  top: -120px;
+.mercury-speed-title,
+.venus-speed-title {
   background: $mars;
   color: #000;
   display: inline-block;
@@ -415,9 +516,18 @@ h3+p {
   border-radius: 5px;
 }
 
+.venus-speed-title {
+  top: -220px;
+  background: $venus;
+}
+
 .mercury-speed-title {
   background: $moon;
 }
+
+// =======
+// Gravity
+// =======
 
 .gravity {
   background: linear-gradient(to bottom, #272769 0%, #095569 100%);
@@ -479,6 +589,24 @@ h3+p {
     left: 40px;
     top: -40px;
     background: $moon;
+  }
+}
+
+.venus-gravity {
+  width: 50%;
+  height: 200px;
+  // background: $mars;
+  margin-top: 23rem;
+  border-radius: 0px 100% 0px 0px;
+  background-image: url('../../../assets/images/venus.svg');
+  background-size: 200%;
+  background-position: center;
+  position: relative;
+
+  .ball {
+    left: 40px;
+    top: -40px;
+    background: $venus;
   }
 }
 
