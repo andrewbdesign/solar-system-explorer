@@ -44,6 +44,7 @@ $earth: linear-gradient(to right, #00c9ff, #92fe9d);
 $mars: linear-gradient(to right, #fe8c00, #f83600);
 $moon: linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea);
 $venus: linear-gradient(to right, #f2994a, #f2c94c);
+$jupiter: linear-gradient(to right, #eacda3, #d6ae7b);
 $size: 300;
 
 h3 {
@@ -108,6 +109,10 @@ h3+p {
   background: $venus;
 }
 
+.planet-size.planet-size-jupiter span {
+  background: $jupiter;
+}
+
 .planet-size.planet-size-mercury span,
 .planet-size.planet-size-moon span {
   background: $moon;
@@ -117,6 +122,7 @@ h3+p {
 .mercury-size,
 .venus-size,
 .mars-size,
+.jupiter-size,
 .moon-size {
   position: relative;
   border-radius: 50%;
@@ -176,6 +182,28 @@ h3+p {
   height: ($size / 4)+ px;
   background: $moon;
 }
+
+$bigsize: 700;
+
+.jupiter-size {
+  width: ($bigsize)+ px;
+  height: ($bigsize)+ px;
+  background: $jupiter;
+}
+
+.planet-size-earth-jupiter .earth-size {
+  width: ($bigsize / 11)+ px;
+  height: ($bigsize / 11)+ px;
+}
+
+.planet-size-moon-jupiter .moon-size {
+  width: (($bigsize / 11) * .25)+ px;
+  height: (($bigsize / 11) * .25)+ px;
+  position: relative;
+  font-size: 6px;
+}
+
+
 
 .miles {
   margin-top: 1rem;
@@ -414,6 +442,61 @@ h3+p {
   }
 }
 
+.distance__container.jupiter__distance {
+  .jupiter-distance-container {
+    width: 600px;
+    height: 600px;
+    margin: auto;
+    border: 3px solid #666;
+    border-radius: 50%;
+    position: relative;
+
+    img.jupiter-distance-planet {
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      top: -55px;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  .earth-distance-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 60%;
+    height: 60%;
+    border: 3px solid #666;
+    border-radius: 50%;
+
+    img.earth-distance-planet {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: -10px;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  img.sun-distance-planet {
+    width: 230px;
+    height: 230px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}
+
 // =======
 // Speed
 // =======
@@ -483,10 +566,44 @@ h3+p {
   height: 190px;
 }
 
+.speed.speed-jupiter {
+  .earth-speed {
+    height: 50px;
+    border-top: 1px solid #dcdcdc;
+    position: relative;
+    margin-top: 14rem;
+  }
+
+  .earth-speed-img {
+    position: absolute;
+    left: -50px;
+    top: -25px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .jupiter-speed {
+    height: 190px;
+    border-top: 1px solid #dcdcdc;
+    position: relative;
+    margin-top: 28rem;
+  }
+
+  .jupiter-speed-img {
+    position: absolute;
+    left: -190px;
+    top: -95px;
+    width: 190px;
+    height: 190px;
+  }
+
+}
+
 .earth-speed-title,
 .mars-speed-title,
 .mercury-speed-title,
-.venus-speed-title {
+.venus-speed-title,
+.jupiter-speed-title {
   font-size: 1.6rem;
   margin-top: 1.3rem;
   position: relative;
@@ -508,7 +625,8 @@ h3+p {
 
 .mars-speed-title,
 .mercury-speed-title,
-.venus-speed-title {
+.venus-speed-title,
+.jupiter-speed-title {
   background: $mars;
   color: #000;
   display: inline-block;
@@ -523,6 +641,11 @@ h3+p {
 
 .mercury-speed-title {
   background: $moon;
+}
+
+.jupiter-speed-title {
+  top: -180px;
+  background: $jupiter;
 }
 
 // =======
@@ -607,6 +730,24 @@ h3+p {
     left: 40px;
     top: -40px;
     background: $venus;
+  }
+}
+
+.jupiter-gravity {
+  width: 50%;
+  height: 200px;
+  // background: $mars;
+  margin-top: 23rem;
+  border-radius: 0px 100% 0px 0px;
+  background-image: url('../../../assets/images/jupiter.svg');
+  background-size: 200%;
+  background-position: center;
+  position: relative;
+
+  .ball {
+    left: 40px;
+    top: -40px;
+    background: $jupiter;
   }
 }
 
