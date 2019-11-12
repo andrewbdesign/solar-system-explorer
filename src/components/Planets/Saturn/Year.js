@@ -4,11 +4,11 @@ const Year = () => {
   const planetYear = [
     {
       name: 'Earth',
-      daysInYear: (365 / 365) * 13 * 4,
+      daysInYear: (365 / 365) * 12,
     },
     {
-      name: 'Jupiter',
-      daysInYear: Math.ceil(4300 / 365) * 13 * 4,
+      name: 'Saturn',
+      daysInYear: Math.ceil(11000 / 365) * 12,
     },
   ];
 
@@ -25,7 +25,7 @@ const Year = () => {
         <div className="year__container">
           <div>
             <h3>
-              {planetYear[0].name}: {planetYear[0].daysInYear} weeks
+              {planetYear[0].name}: {planetYear[0].daysInYear} months
             </h3>
             <div className="days-container earth-days">
               {createDays(planetYear[0])}
@@ -33,9 +33,9 @@ const Year = () => {
           </div>
           <div>
             <h3>
-              {planetYear[1].name}: {planetYear[1].daysInYear} weeks
+              {planetYear[1].name}: {planetYear[1].daysInYear} months
             </h3>
-            <div className="days-container venus-days">
+            <div className="days-container saturn-days">
               {createDays(planetYear[1])}
             </div>
           </div>

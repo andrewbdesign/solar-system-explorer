@@ -45,6 +45,7 @@ $mars: linear-gradient(to right, #fe8c00, #f83600);
 $moon: linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea);
 $venus: linear-gradient(to right, #f2994a, #f2c94c);
 $jupiter: linear-gradient(to right, #eacda3, #d6ae7b);
+$saturn: linear-gradient(to right, #cac531, #f3f9a7);
 $size: 300;
 
 h3 {
@@ -113,6 +114,10 @@ h3+p {
   background: $jupiter;
 }
 
+.planet-size.planet-size-saturn span {
+  background: $saturn;
+}
+
 .planet-size.planet-size-mercury span,
 .planet-size.planet-size-moon span {
   background: $moon;
@@ -123,6 +128,7 @@ h3+p {
 .venus-size,
 .mars-size,
 .jupiter-size,
+.saturn-size,
 .moon-size {
   position: relative;
   border-radius: 50%;
@@ -185,18 +191,25 @@ h3+p {
 
 $bigsize: 700;
 
-.jupiter-size {
+.jupiter-size,
+.saturn-size {
   width: ($bigsize)+ px;
   height: ($bigsize)+ px;
   background: $jupiter;
 }
 
-.planet-size-earth-jupiter .earth-size {
+.saturn-size {
+  background: transparent;
+}
+
+.planet-size-earth-jupiter .earth-size,
+.planet-size-earth-saturn .earth-size {
   width: ($bigsize / 11)+ px;
   height: ($bigsize / 11)+ px;
 }
 
-.planet-size-moon-jupiter .moon-size {
+.planet-size-moon-jupiter .moon-size,
+.planet-size-moon-saturn .moon-size {
   width: (($bigsize / 11) * .25)+ px;
   height: (($bigsize / 11) * .25)+ px;
   position: relative;
@@ -262,6 +275,10 @@ $bigsize: 700;
 
   .days-container.mercury-days span {
     background: $moon;
+  }
+
+  .days-container.saturn-days span {
+    background: $saturn;
   }
 }
 
@@ -497,6 +514,61 @@ $bigsize: 700;
   }
 }
 
+.distance__container.saturn__distance {
+  .saturn-distance-container {
+    width: 600px;
+    height: 600px;
+    margin: auto;
+    border: 3px solid #666;
+    border-radius: 50%;
+    position: relative;
+
+    img.saturn-distance-planet {
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      top: -55px;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  .earth-distance-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 60%;
+    height: 60%;
+    border: 3px solid #666;
+    border-radius: 50%;
+
+    img.earth-distance-planet {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: -10px;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  img.sun-distance-planet {
+    width: 230px;
+    height: 230px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}
+
 // =======
 // Speed
 // =======
@@ -596,13 +668,45 @@ $bigsize: 700;
     width: 190px;
     height: 190px;
   }
+}
 
+.speed.speed-saturn {
+  .earth-speed {
+    height: 50px;
+    border-top: 1px solid #dcdcdc;
+    position: relative;
+    margin-top: 14rem;
+  }
+
+  .earth-speed-img {
+    position: absolute;
+    left: -50px;
+    top: -25px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .saturn-speed {
+    height: 300px;
+    border-top: 1px solid #dcdcdc;
+    position: relative;
+    margin-top: 28rem;
+  }
+
+  .saturn-speed-img {
+    position: absolute;
+    left: -300px;
+    top: -150px;
+    width: 300px;
+    height: 300px;
+  }
 }
 
 .earth-speed-title,
 .mars-speed-title,
 .mercury-speed-title,
 .venus-speed-title,
+.saturn-speed-title,
 .jupiter-speed-title {
   font-size: 1.6rem;
   margin-top: 1.3rem;
@@ -626,7 +730,8 @@ $bigsize: 700;
 .mars-speed-title,
 .mercury-speed-title,
 .venus-speed-title,
-.jupiter-speed-title {
+.jupiter-speed-title,
+.saturn-speed-title {
   background: $mars;
   color: #000;
   display: inline-block;
@@ -646,6 +751,11 @@ $bigsize: 700;
 .jupiter-speed-title {
   top: -180px;
   background: $jupiter;
+}
+
+.saturn-speed-title {
+  top: -180px;
+  background: $saturn;
 }
 
 // =======
@@ -748,6 +858,24 @@ $bigsize: 700;
     left: 40px;
     top: -40px;
     background: $jupiter;
+  }
+}
+
+.saturn-gravity {
+  width: 50%;
+  height: 200px;
+  // background: $mars;
+  margin-top: 23rem;
+  border-radius: 0px 100% 0px 0px;
+  background-image: url('../../../assets/images/saturn.svg');
+  background-size: 200%;
+  background-position: center;
+  position: relative;
+
+  .ball {
+    left: 40px;
+    top: -40px;
+    background: $saturn;
   }
 }
 
