@@ -11,6 +11,8 @@ import RedPlanet from './RedPlanet';
 import GreenPlanet from './GreenPlanet';
 import OrangePlanet from './OrangePlanet';
 import BottomPlanet from './BottomPlanet';
+import Saturn from './Saturn';
+import Uranus from './Uranus';
 import Shadows from './Shadows';
 import Title from './Title';
 
@@ -42,6 +44,8 @@ const Index = () => {
       <OrangePlanet />
       <BottomPlanet />
       <Shadows />
+      <Saturn />
+      <Uranus />
       <div className="scene-overlay"></div>
     </div>
   );

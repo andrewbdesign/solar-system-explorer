@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { TimelineMax } from 'gsap';
 
 import Earth from '../../../assets/images/earth.svg';
-import Saturn from '../../../assets/images/saturn.svg';
+import Uranus from '../../../assets/images/uranus.svg';
 import { Linear } from 'gsap/TweenLite';
 
 const Speed = () => {
@@ -32,8 +32,8 @@ const Speed = () => {
         <p className="earth-speed-title">Earth: 66,622 mph / 107,218 kph</p>
       </div>
       <div className="saturn-speed">
-        <img className="saturn-speed-img" src={Saturn} alt="" />
-        <p className="saturn-speed-title">Saturn: 21,637 mph / 34,821 kph</p>
+        <img className="saturn-speed-img" src={Uranus} alt="" />
+        <p className="saturn-speed-title">Uranus: 21,637 mph / 34,821 kph</p>
       </div>
     </section>
   );
