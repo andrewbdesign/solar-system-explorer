@@ -47,6 +47,7 @@ $venus: linear-gradient(to right, #f2994a, #f2c94c);
 $jupiter: linear-gradient(to right, #eacda3, #d6ae7b);
 $saturn: linear-gradient(to right, #cac531, #f3f9a7);
 $uranus: linear-gradient(to right, #56ccf2, #2f80ed);
+$neptune: linear-gradient(to right, #396afc, #2948ff);
 $size: 300;
 
 h3 {
@@ -123,6 +124,10 @@ h3+p {
   background: $uranus;
 }
 
+.planet-size.planet-size-neptune span {
+  background: $neptune;
+}
+
 .planet-size.planet-size-mercury span,
 .planet-size.planet-size-moon span {
   background: $moon;
@@ -134,6 +139,7 @@ h3+p {
 .mars-size,
 .jupiter-size,
 .saturn-size,
+.neptune-size,
 .moon-size {
   position: relative;
   border-radius: 50%;
@@ -208,10 +214,21 @@ $bigsize: 700;
   background: transparent;
 }
 
+.neptune-size {
+  background: $neptune;
+  width: ($bigsize / 2)+ px;
+  height: ($bigsize / 2)+ px;
+}
+
 .planet-size-earth-jupiter .earth-size,
 .planet-size-earth-saturn .earth-size {
   width: ($bigsize / 11)+ px;
   height: ($bigsize / 11)+ px;
+}
+
+.planet-size-earth-neptune .earth-size {
+  width: ($bigsize / 6)+ px;
+  height: ($bigsize / 6)+ px;
 }
 
 .planet-size-moon-jupiter .moon-size,
@@ -220,6 +237,13 @@ $bigsize: 700;
   height: (($bigsize / 11) * .25)+ px;
   position: relative;
   font-size: 6px;
+}
+
+.planet-size-moon-neptune .moon-size {
+  width: (($bigsize / 6) * .25)+ px;
+  height: (($bigsize / 6) * .25)+ px;
+  position: relative;
+  font-size: 10px;
 }
 
 
@@ -905,6 +929,24 @@ $bigsize: 700;
     left: 40px;
     top: -40px;
     background: $uranus;
+  }
+}
+
+.neptune-gravity {
+  width: 50%;
+  height: 200px;
+  // background: $mars;
+  margin-top: 23rem;
+  border-radius: 0px 100% 0px 0px;
+  background-image: url('../../../assets/images/neptune.svg');
+  background-size: 200%;
+  background-position: center;
+  position: relative;
+
+  .ball {
+    left: 40px;
+    top: -40px;
+    background: $neptune;
   }
 }
 

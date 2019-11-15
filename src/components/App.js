@@ -5,7 +5,8 @@ import SplashScreen from './SplashScreen/index';
 // import Venus from './Planets/Venus/index';
 // import Jupiter from './Planets/Jupiter/index';
 // import Saturn from './Planets/Saturn/index';
-import Uranus from './Planets/Uranus/index';
+// import Uranus from './Planets/Uranus/index';
+import Neptune from './Planets/Neptune/index';
 
 const App = () => {
   return (
@@ -17,8 +18,9 @@ const App = () => {
         <Venus />
         <Jupiter />
         <Saturn />
+        <Uranus />
       */}
-      <Uranus />
+      <Neptune />
     </Fragment>
   );
 };
