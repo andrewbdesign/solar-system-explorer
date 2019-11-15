@@ -48,6 +48,7 @@ $jupiter: linear-gradient(to right, #eacda3, #d6ae7b);
 $saturn: linear-gradient(to right, #cac531, #f3f9a7);
 $uranus: linear-gradient(to right, #56ccf2, #2f80ed);
 $neptune: linear-gradient(to right, #396afc, #2948ff);
+$pluto: linear-gradient(to right, #e9d362, #333333);
 $size: 300;
 
 h3 {
@@ -126,6 +127,10 @@ h3+p {
 
 .planet-size.planet-size-neptune span {
   background: $neptune;
+}
+
+.planet-size.planet-size-pluto span {
+  background: $pluto;
 }
 
 .planet-size.planet-size-mercury span,
@@ -313,6 +318,10 @@ $bigsize: 700;
 
   .days-container.uranus-days span {
     background: $uranus;
+  }
+
+  .days-container.pluto-days span {
+    background: $pluto;
   }
 }
 
@@ -603,6 +612,61 @@ $bigsize: 700;
   }
 }
 
+.distance__container.pluto__distance {
+  .pluto-distance-container {
+    width: 600px;
+    height: 600px;
+    margin: auto;
+    border: 3px solid #666;
+    border-radius: 50%;
+    position: relative;
+
+    img.pluto-distance-planet {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      top: -5px;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  .earth-distance-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 60%;
+    height: 60%;
+    border: 3px solid #666;
+    border-radius: 50%;
+
+    img.earth-distance-planet {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: -10px;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  img.sun-distance-planet {
+    width: 230px;
+    height: 230px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}
+
 // =======
 // Speed
 // =======
@@ -736,12 +800,28 @@ $bigsize: 700;
   }
 }
 
+.pluto-speed {
+  height: 200px;
+  border-top: 1px solid #dcdcdc;
+  position: relative;
+  margin-top: 8rem;
+}
+
+.pluto-speed-img {
+  position: absolute;
+  left: -100px;
+  width: 100px;
+  height: 100px;
+  top: -50px;
+}
+
 .earth-speed-title,
 .mars-speed-title,
 .mercury-speed-title,
 .venus-speed-title,
 .saturn-speed-title,
 .jupiter-speed-title,
+.pluto-speed-title,
 .uranus-speed-title {
   font-size: 1.6rem;
   margin-top: 1.3rem;
@@ -763,6 +843,7 @@ $bigsize: 700;
 }
 
 .mars-speed-title,
+.pluto-speed-title,
 .mercury-speed-title,
 .venus-speed-title,
 .jupiter-speed-title,
@@ -791,6 +872,11 @@ $bigsize: 700;
 .saturn-speed-title {
   top: -180px;
   background: $saturn;
+}
+
+.pluto-speed-title {
+  top: -120px;
+  background: $pluto;
 }
 
 // =======
@@ -947,6 +1033,24 @@ $bigsize: 700;
     left: 40px;
     top: -40px;
     background: $neptune;
+  }
+}
+
+.pluto-gravity {
+  width: 50%;
+  height: 200px;
+  // background: $mars;
+  margin-top: 23rem;
+  border-radius: 0px 100% 0px 0px;
+  background-image: url('../../../assets/images/pluto.svg');
+  background-size: 200%;
+  background-position: center;
+  position: relative;
+
+  .ball {
+    left: 40px;
+    top: -40px;
+    background: $pluto;
   }
 }
 

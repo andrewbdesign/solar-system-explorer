@@ -14,6 +14,7 @@ import BottomPlanet from './BottomPlanet';
 import Saturn from './Saturn';
 import Uranus from './Uranus';
 import Neptune from './Neptune';
+import Pluto from './Pluto';
 import Shadows from './Shadows';
 import Title from './Title';
 
@@ -48,6 +49,7 @@ const Index = () => {
       <Saturn />
       <Uranus />
       <Neptune />
+      <Pluto />
       <div className="scene-overlay"></div>
     </div>
   );
