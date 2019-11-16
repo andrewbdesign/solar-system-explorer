@@ -1,6 +1,4 @@
-import React, { useEffect } from 'react';
-// import { TimelineMax, Power1 } from 'gsap';
-// import Parallax from 'parallax-js';
+import React from 'react';
 
 // Components
 import Stars from './Stars';
@@ -19,21 +17,6 @@ import Shadows from './Shadows';
 import Title from './Title';
 
 const Index = () => {
-  useEffect(() => {
-    // const tl = new TimelineMax();
-    // tl.staggerFromTo(
-    //   '.planet',
-    //   2,
-    //   { autoAlpha: 0 },
-    //   { autoAlpha: 1, y: 0, ease: Power1.easeOut, force3D: false },
-    //   0.2,
-    //   '0',
-    // );
-    // const scene = document.getElementById('scene');
-    // eslint-disable-next-line
-    // const parallaxInstance = new Parallax(scene);
-  }, []);
-
   return (
     <div id="scene">
       <Title />

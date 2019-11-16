@@ -3,7 +3,12 @@ import { TimelineMax, Back, Power1, TweenLite } from 'gsap';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
 import Pluto from '../../assets/images/pluto.svg';
 
-const PlutoPlanet = () => {
+// Redux
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { setPlanet, resetPlanets } from '../../actions/planets';
+
+const PlutoPlanet = ({ setPlanet, resetPlanets }) => {
   // eslint-disable-next-line
   const plugin = [ScrollToPlugin];
   const [active, setActive] = useState(false);
@@ -45,6 +50,7 @@ const PlutoPlanet = () => {
     if (active) {
       const tl = new TimelineMax();
       showPlanets();
+      resetPlanets();
       tl.to(
         '.moon',
         0.6,
@@ -61,6 +67,7 @@ const PlutoPlanet = () => {
     } else {
       const tl = new TimelineMax({ delay: 0.6 });
       hidePlanets();
+      setPlanet('pluto');
       TweenLite.to(window, 2, {
         scrollTo: { y: '.title-info' },
         ease: Power1.easeInOut,
@@ -136,4 +143,15 @@ const PlutoPlanet = () => {
   );
 };
 
-export default PlutoPlanet;
+PlutoPlanet.propTypes = {
+  setPlanet: PropTypes.func.isRequired,
+  resetPlanets: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = null;
+const mapDispatchToProps = {
+  setPlanet,
+  resetPlanets,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(PlutoPlanet);

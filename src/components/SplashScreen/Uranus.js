@@ -3,7 +3,12 @@ import { TimelineMax, Back, Power1, TweenLite } from 'gsap';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
 import Uranus from '../../assets/images/uranus.svg';
 
-const RedPlanet = () => {
+// Redux
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { setPlanet, resetPlanets } from '../../actions/planets';
+
+const RedPlanet = ({ setPlanet, resetPlanets }) => {
   // eslint-disable-next-line
   const plugin = [ScrollToPlugin];
   const [active, setActive] = useState(false);
@@ -45,6 +50,7 @@ const RedPlanet = () => {
     if (active) {
       const tl = new TimelineMax();
       showPlanets();
+      resetPlanets();
       tl.to(
         '.moon',
         0.6,
@@ -61,6 +67,7 @@ const RedPlanet = () => {
     } else {
       const tl = new TimelineMax({ delay: 0.6 });
       hidePlanets();
+      setPlanet('uranus');
       TweenLite.to(window, 2, {
         scrollTo: { y: '.title-info' },
         ease: Power1.easeInOut,
@@ -99,6 +106,8 @@ const RedPlanet = () => {
       '.orange-planet',
       '.side-planet',
       '.bottom-planet',
+      '.pluto-planet',
+      '.neptune-planet',
     ];
     const tl = new TimelineMax();
     tl.to(planets, 1, { autoAlpha: 0, ease: Power1.easeInOut }, '0');
@@ -113,6 +122,8 @@ const RedPlanet = () => {
       '.orange-planet',
       '.side-planet',
       '.bottom-planet',
+      '.pluto-planet',
+      '.neptune-planet',
     ];
     const tl = new TimelineMax();
     tl.to(planets, 0.6, { autoAlpha: 1, ease: Power1.easeInOut }, '0');
@@ -132,4 +143,15 @@ const RedPlanet = () => {
   );
 };
 
-export default RedPlanet;
+RedPlanet.propTypes = {
+  setPlanet: PropTypes.func.isRequired,
+  resetPlanets: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = null;
+const mapDispatchToProps = {
+  setPlanet,
+  resetPlanets,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(RedPlanet);
