@@ -177,3 +177,46 @@ h2 {
   letter-spacing: 15px;
   font-size: 10rem;
 }
+
+nav {
+  top: 0;
+  position: fixed;
+  z-index: 3000;
+  width: 100%;
+  height: 60px;
+  background: #000;
+  opacity: 0;
+  transition: opacity .2s ease-in-out 1s;
+  color: #fff;
+}
+
+nav.active {
+  opacity: 1;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  align-items: center;
+  height: 90%;
+  font-size: 19px;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+
+    &:hover {
+      text-decoration: underline;
+      // background: #fff;
+    }
+
+    img {
+      width: 20px;
+      margin: 0 auto;
+    }
+  }
+}
