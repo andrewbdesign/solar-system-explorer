@@ -10,7 +10,7 @@ const Index = () => {
     <Fragment>
       <section className="red-planet-info">
         <div className="container">
-          <h2 className="title-info">Neptune</h2>
+          <h2 className="title-info">NEPTUNE</h2>
         </div>
         <Size />
         <Year />

@@ -2,8 +2,12 @@ import React, { Fragment, useEffect, useState } from 'react';
 import { TimelineMax, Back, Power1, TweenLite } from 'gsap';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
 import Neptune from '../../assets/images/neptune.svg';
+// Redux
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { setPlanet, resetPlanets } from '../../actions/planets';
 
-const RedPlanet = () => {
+const RedPlanet = ({ setPlanet, resetPlanets }) => {
   // eslint-disable-next-line
   const plugin = [ScrollToPlugin];
   const [active, setActive] = useState(false);
@@ -45,6 +49,7 @@ const RedPlanet = () => {
     if (active) {
       const tl = new TimelineMax();
       showPlanets();
+      resetPlanets();
       tl.to(
         '.moon',
         0.6,
@@ -61,6 +66,7 @@ const RedPlanet = () => {
     } else {
       const tl = new TimelineMax({ delay: 0.6 });
       hidePlanets();
+      setPlanet('neptune');
       TweenLite.to(window, 2, {
         scrollTo: { y: '.title-info' },
         ease: Power1.easeInOut,
@@ -134,4 +140,15 @@ const RedPlanet = () => {
   );
 };
 
-export default RedPlanet;
+RedPlanet.propTypes = {
+  setPlanet: PropTypes.func.isRequired,
+  resetPlanets: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = null;
+const mapDispatchToProps = {
+  setPlanet,
+  resetPlanets,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(RedPlanet);

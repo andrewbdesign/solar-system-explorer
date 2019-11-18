@@ -54,7 +54,7 @@ const App = ({ currentPlanet, setPlanet }) => {
       {currentPlanet === 'jupiter' && <Jupiter />}
       {currentPlanet === 'saturn' && <Saturn />}
       {currentPlanet === 'uranus' && <Uranus />}
-      {currentPlanet === 'nepturn' && <Neptune />}
+      {currentPlanet === 'neptune' && <Neptune />}
       {currentPlanet === 'pluto' && <Pluto />}
     </Fragment>
   );
