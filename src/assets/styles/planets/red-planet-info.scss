@@ -33,6 +33,21 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-direction: column;
+
+  div {
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (min-width: 740px) {
+  .size__container {
+    flex-direction: row;
+
+    div {
+      margin-bottom: 0;
+    }
+  }
 }
 
 
@@ -276,6 +291,7 @@ $bigsize: 700;
 .year__container {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
 
   div {
     width: 100%;
@@ -325,6 +341,12 @@ $bigsize: 700;
   }
 }
 
+@media screen and (min-width: 740px) {
+  .year__container {
+    flex-direction: row;
+  }
+}
+
 // =======
 // Distance
 // =======
@@ -338,13 +360,22 @@ $bigsize: 700;
 }
 
 .distance__container.mars__distance {
+  // transform: scale(0.7);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+
   .mars-distance-container {
-    width: 600px;
-    height: 600px;
+    width: 90vw;
+    height: 90vw;
+    max-width: 600px;
+    max-height: 600px;
     margin: auto;
     border: 3px solid #666;
     border-radius: 50%;
     position: relative;
+    // left: 50%;
+    // transform: translateX(-50%);
 
     img.mars-distance-planet {
       position: absolute;
@@ -394,8 +425,10 @@ $bigsize: 700;
 
 .distance__container.mercury__distance {
   .earth-distance-container {
-    width: 600px;
-    height: 600px;
+    width: 90vw;
+    height: 90vw;
+    max-width: 600px;
+    max-height: 600px;
     margin: auto;
     border: 3px solid #666;
     border-radius: 50%;
@@ -449,8 +482,10 @@ $bigsize: 700;
 
 .distance__container.venus__distance {
   .earth-distance-container {
-    width: 600px;
-    height: 600px;
+    width: 90vw;
+    height: 90vw;
+    max-width: 600px;
+    max-height: 600px;
     margin: auto;
     border: 3px solid #666;
     border-radius: 50%;
@@ -504,8 +539,10 @@ $bigsize: 700;
 
 .distance__container.jupiter__distance {
   .jupiter-distance-container {
-    width: 600px;
-    height: 600px;
+    width: 90vw;
+    height: 90vw;
+    max-width: 600px;
+    max-height: 600px;
     margin: auto;
     border: 3px solid #666;
     border-radius: 50%;
@@ -559,8 +596,10 @@ $bigsize: 700;
 
 .distance__container.saturn__distance {
   .saturn-distance-container {
-    width: 600px;
-    height: 600px;
+    width: 90vw;
+    height: 90vw;
+    max-width: 600px;
+    max-height: 600px;
     margin: auto;
     border: 3px solid #666;
     border-radius: 50%;
@@ -614,8 +653,10 @@ $bigsize: 700;
 
 .distance__container.pluto__distance {
   .pluto-distance-container {
-    width: 600px;
-    height: 600px;
+    width: 90vw;
+    height: 90vw;
+    max-width: 600px;
+    max-height: 600px;
     margin: auto;
     border: 3px solid #666;
     border-radius: 50%;
